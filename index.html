@@ -1,1 +1,1670 @@
-<html><body><h1>Generuji...</h1></body></html>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gasfa — Airsoftové hřiště Třeboň | Půjčovna zbraní</title>
+<meta name="description" content="Airsoftové hřiště v Třeboni. Půjčíme zbraně i výbavu, organizujeme firemní teambuildingy a narozeniny. Rezervujte online.">
+<meta property="og:title" content="gasfa — Airsoftové hřiště Třeboň | Půjčovna zbraní">
+<meta property="og:description" content="Airsoftové hřiště v Třeboni. Půjčíme zbraně i výbavu, organizujeme firemní teambuildingy a narozeniny. Rezervujte online.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://gasfa.webzitra.cz">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "gasfa — Airsoftové hřiště Třeboň",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Třeboň",
+    "addressRegion": "Jihočeský kraj",
+    "addressCountry": "CZ"
+  },
+  "telephone": "+420XXXXXXXXX",
+  "email": "info@gasfa.cz",
+  "openingHours": ["Mo-Fr 14:00-20:00", "Sa-Su 09:00-20:00"],
+  "url": "https://gasfa.webzitra.cz"
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #0f172a;
+  --primary-rgb: 15, 23, 42;
+  --primary-light: #575d6a;
+  --primary-dark: #0b101d;
+  --primary-glow: rgba(15, 23, 42, 0.2);
+  --accent: #f97316;
+  --accent-light: #fb923c;
+  --accent-glow: rgba(249, 115, 22, 0.25);
+  --bg: #0a0a12;
+  --bg-alt: #111118;
+  --bg-dark: #06060a;
+  --bg-dark-2: #0e0e16;
+  --text: #e2e8f0;
+  --text-light: #f8fafc;
+  --text-muted: #94a3b8;
+  --surface: #16161e;
+  --surface-glass: rgba(255,255,255,0.05);
+  --border: rgba(255,255,255,0.08);
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.3);
+  --shadow-lg: 0 20px 40px -8px rgba(0,0,0,0.5);
+  --radius: 16px;
+  --radius-sm: 8px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img { width: 100%; height: auto; object-fit: cover; display: block; }
+
+a { text-decoration: none; color: inherit; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+}
+
+section { padding: clamp(3rem, 8vw, 6rem) 0; }
+
+.section-badge {
+  display: inline-block;
+  background: rgba(249,115,22,0.15);
+  color: var(--accent-light);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(249,115,22,0.3);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* ═══ NAVBAR ═══ */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  background: rgba(10,10,18,0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(6,6,10,0.92);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+.navbar-logo span {
+  color: var(--accent);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar-links a {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+.navbar-links a:hover {
+  color: #fff;
+}
+
+.navbar-links a:hover::after { width: 100%; }
+
+.navbar-cta {
+  background: var(--accent);
+  color: #fff !important;
+  padding: 9px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s !important;
+}
+
+.navbar-cta:hover {
+  background: var(--accent-light) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--accent-glow) !important;
+}
+
+.navbar-cta::after { display: none !important; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: rgba(6,6,10,0.98);
+  border-top: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.mobile-menu.open { display: flex; }
+
+.mobile-menu a {
+  color: rgba(255,255,255,0.8);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 12px clamp(1rem, 4vw, 2rem);
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s, background 0.2s;
+}
+
+.mobile-menu a:hover {
+  color: var(--accent-light);
+  background: rgba(249,115,22,0.05);
+}
+
+/* ═══ HERO ═══ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: url('https://images.pexels.com/photos/3184423/pexels-photo-3184423.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop') center/cover no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.85) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 8rem clamp(1rem, 4vw, 2rem) 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(249,115,22,0.2);
+  color: var(--accent-light);
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(249,115,22,0.4);
+  margin-bottom: 1.25rem;
+  animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+  margin-bottom: 1.25rem;
+  line-height: 1.1;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero h1 span { color: var(--accent); }
+
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: rgba(255,255,255,0.88);
+  max-width: 560px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px var(--accent-glow);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 2px solid rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease 0.8s both;
+}
+
+.hero-stat {
+  text-align: center;
+  padding: 1.1rem 0.75rem;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.hero-stat-num {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  display: block;
+}
+
+.hero-stat-label {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.72);
+  margin-top: 5px;
+  display: block;
+  line-height: 1.3;
+}
+
+/* ═══ O NÁS ═══ */
+.about {
+  background: var(--bg-alt);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-img-wrap {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.about-img-wrap img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+.about-img-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.about-text .section-title { color: var(--text-light); }
+.about-text .section-subtitle { color: var(--text-muted); max-width: 100%; }
+
+.about-text p {
+  color: rgba(226,232,240,0.85);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-size: 0.98rem;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.about-stat-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.about-stat-card:hover {
+  border-color: rgba(249,115,22,0.4);
+  transform: translateY(-3px);
+}
+
+.about-stat-card .num {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+}
+
+.about-stat-card .lbl {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  display: block;
+}
+
+/* ═══ SLUŽBY ═══ */
+.services {
+  background: var(--bg);
+}
+
+.services-header { text-align: center; margin-bottom: 3rem; }
+.services-header .section-title { color: var(--text-light); }
+.services-header .section-subtitle { margin: 0 auto; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(249,115,22,0.35);
+}
+
+.service-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-card-body {
+  padding: 1.5rem;
+}
+
+.service-price {
+  display: inline-block;
+  background: rgba(249,115,22,0.12);
+  color: var(--accent-light);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(249,115,22,0.25);
+  margin-bottom: 0.75rem;
+}
+
+.service-card-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 0.6rem;
+}
+
+.service-card-body p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ═══ PORTFOLIO / GALERIE ═══ */
+.gallery {
+  background: var(--bg-alt);
+}
+
+.gallery-header { text-align: center; margin-bottom: 3rem; }
+.gallery-header .section-title { color: var(--text-light); }
+.gallery-header .section-subtitle { margin: 0 auto; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.gallery-card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover img { transform: scale(1.07); }
+
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-card-overlay { opacity: 1; }
+
+.gallery-card-overlay .cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.gallery-card-overlay h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ═══ RECENZE ═══ */
+.reviews {
+  background: var(--bg);
+}
+
+.reviews-header { text-align: center; margin-bottom: 3rem; }
+.reviews-header .section-title { color: var(--text-light); }
+.reviews-header .section-subtitle { margin: 0 auto; }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.review-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(249,115,22,0.25);
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 1rem;
+}
+
+.review-stars span { color: #f59e0b; font-size: 1.1rem; }
+
+.review-text {
+  font-size: 0.92rem;
+  color: rgba(226,232,240,0.85);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+
+.review-author {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+/* ═══ FAQ ═══ */
+.faq {
+  background: var(--bg-alt);
+}
+
+.faq-header { text-align: center; margin-bottom: 3rem; }
+.faq-header .section-title { color: var(--text-light); }
+.faq-header .section-subtitle { margin: 0 auto; }
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.faq-item:hover { border-color: rgba(249,115,22,0.3); }
+.faq-item.open { border-color: rgba(249,115,22,0.4); }
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  gap: 1rem;
+}
+
+.faq-question span {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(249,115,22,0.12);
+  border: 1px solid rgba(249,115,22,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  transition: transform 0.3s ease, background 0.2s;
+  line-height: 1;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+  background: var(--accent);
+  color: #fff;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-answer-inner {
+  padding: 0 1.5rem 1.2rem;
+  font-size: 0.92rem;
+  color: rgba(148,163,184,0.9);
+  line-height: 1.75;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+}
+
+/* ═══ KONTAKT ═══ */
+.contact {
+  background: var(--bg);
+}
+
+.contact-header { text-align: center; margin-bottom: 3rem; }
+.contact-header .section-title { color: var(--text-light); }
+.contact-header .section-subtitle { margin: 0 auto; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-info-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.contact-info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.contact-info-item .icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(249,115,22,0.12);
+  border: 1px solid rgba(249,115,22,0.25);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.contact-info-item .info-text strong {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+.contact-info-item .info-text span {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.hours-grid {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+}
+
+.hours-grid h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.85rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: rgba(226,232,240,0.85);
+}
+
+.hours-row:last-child { border-bottom: none; }
+
+.hours-row .time {
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+.contact-form {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.contact-form h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-light);
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group select option {
+  background: var(--bg-dark);
+  color: var(--text);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-submit:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px var(--accent-glow);
+}
+
+/* ═══ FOOTER ═══ */
+footer {
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border);
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-logo {
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.footer-logo span { color: var(--accent); }
+
+.footer-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 260px;
+}
+
+.footer-col h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+.footer-col ul li a {
+  font-size: 0.85rem;
+  color: rgba(226,232,240,0.65);
+  transition: color 0.2s;
+}
+
+.footer-col ul li a:hover { color: var(--accent-light); }
+
+.footer-col p {
+  font-size: 0.85rem;
+  color: rgba(226,232,240,0.65);
+  line-height: 1.7;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-bottom a { color: var(--accent-light); transition: color 0.2s; }
+.footer-bottom a:hover { color: var(--accent); }
+
+/* ═══ BACK TO TOP ═══ */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+  z-index: 500;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#back-to-top:hover {
+  transform: translateY(-3px) rotate(5deg);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+/* ═══ ANIMATIONS ═══ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-img-wrap img { height: 360px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .navbar-links { display: none; }
+  .hamburger { display: flex; }
+
+  .hero { min-height: 80vh; }
+
+  .hero-stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .hero-stat { padding: 0.75rem 0.4rem; }
+  .hero-stat-num { font-size: 1.25rem; }
+  .hero-stat-label { font-size: 0.65rem; }
+
+  .hero-cta { gap: 0.75rem; }
+  .btn-primary, .btn-secondary { padding: 12px 22px; font-size: 0.9rem; }
+
+  .about-stats { grid-template-columns: 1fr 1fr; }
+
+  .services-grid { grid-template-columns: 1fr; }
+
+  .gallery-grid { grid-template-columns: 1fr; }
+
+  .reviews-grid { grid-template-columns: 1fr; }
+
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+
+  .footer-grid { grid-template-columns: 1fr; }
+
+  .about-stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="#" class="navbar-logo">gas<span>fa</span></a>
+      <ul class="navbar-links">
+        <li><a href="#about">O nás</a></li>
+        <li><a href="#services">Služby</a></li>
+        <li><a href="#gallery">Galerie</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact" class="navbar-cta">Rezervovat</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#about">O nás</a>
+      <a href="#services">Služby</a>
+      <a href="#gallery">Galerie</a>
+      <a href="#reviews">Recenze</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Rezervovat</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Airsoft Třeboň</div>
+    <h1>Airsoft aréna v srdci <span>Třeboně</span></h1>
+    <p>Zažijte taktický boj na profesionálním hřišti. Vybavení půjčíme, zkušenosti si odvezete sami.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Rezervovat termín</a>
+      <a href="#services" class="btn-secondary">Prohlédnout služby</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num"><span class="counter" data-target="5">0</span>+</span>
+        <span class="hero-stat-label">let na hřišti</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num"><span class="counter" data-target="2000">0</span>+</span>
+        <span class="hero-stat-label">spokojených hráčů</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num"><span class="counter" data-target="12">0</span>+</span>
+        <span class="hero-stat-label">taktických scénářů</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num"><span class="counter" data-target="30">0</span></span>
+        <span class="hero-stat-label">hráčů najednou</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ O NÁS ═══ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap animate-on-scroll">
+        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Hřiště gasfa Třeboň" loading="lazy">
+        <div class="about-img-badge">Třeboň, Jihočeský kraj</div>
+      </div>
+      <div class="about-text animate-on-scroll" style="transition-delay: 0.15s">
+        <div class="section-badge">O nás</div>
+        <h2 class="section-title">Hřiště vyrostlo z vášně pro taktický boj</h2>
+        <p>gasfa je airsoftové hřiště v&nbsp;Třeboni, které vzniklo z&nbsp;vášně pro taktické střílečky a&nbsp;venkovní akci. Nabízíme reálný bojový zážitek na promyšleně navržených hracích plochách s&nbsp;různorodými terény — od husté vegetace po otevřená stanoviště.</p>
+        <p>Každý, kdo k&nbsp;nám přijde, dostane plnou podporu od první rezervace až po poslední výstřel. Nezáleží na tom, zda jste zkušený hráč s&nbsp;vlastní výbavou nebo úplný začátečník — půjčíme vám vše potřebné a&nbsp;ukážeme, jak bezpečně a&nbsp;efektivně hrát.</p>
+        <p>Jsme hrdí na to, že hřiště neustále vylepšujeme a&nbsp;přidáváme nové prvky, aby každá návštěva přinesla něco nového. Třeboň a&nbsp;okolí mají pro airsoft ideální přírodní podmínky — a&nbsp;my je využíváme naplno.</p>
+        <div class="about-stats">
+          <div class="about-stat-card animate-on-scroll" style="transition-delay:0.2s">
+            <span class="num">5+</span>
+            <span class="lbl">let zkušeností</span>
+          </div>
+          <div class="about-stat-card animate-on-scroll" style="transition-delay:0.3s">
+            <span class="num">2 000+</span>
+            <span class="lbl">hráčů na hřišti</span>
+          </div>
+          <div class="about-stat-card animate-on-scroll" style="transition-delay:0.4s">
+            <span class="num">12+</span>
+            <span class="lbl">unikátních misí</span>
+          </div>
+          <div class="about-stat-card animate-on-scroll" style="transition-delay:0.5s">
+            <span class="num">30</span>
+            <span class="lbl">hráčů kapacita</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLUŽBY ═══ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-badge">Služby</div>
+      <h2 class="section-title" style="color:var(--text-light)">Co u&nbsp;nás najdete</h2>
+      <p class="section-subtitle">Od pronájmu celého hřiště po kompletní výbavu — postaráme se o&nbsp;vše, vy se soustředte na hru.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card animate-on-scroll" style="transition-delay:0.1s">
+        <img src="https://images.pexels.com/photos/3184423/pexels-photo-3184423.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Pronájem hřiště" class="service-card-img" loading="lazy">
+        <div class="service-card-body">
+          <span class="service-price">od 2 500 Kč</span>
+          <h3>Pronájem hřiště</h3>
+          <p>Celé taktické hřiště k&nbsp;dispozici pro vaši skupinu. Ideální pro firemní akce, party nebo pravidelné tréninky. Kapacita až 30 hráčů.</p>
+        </div>
+      </div>
+      <div class="service-card animate-on-scroll" style="transition-delay:0.2s">
+        <img src="https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Půjčovna zbraní" class="service-card-img" loading="lazy">
+        <div class="service-card-body">
+          <span class="service-price">od 150 Kč / zbraň</span>
+          <h3>Půjčovna airsoftových zbraní</h3>
+          <p>Nepřijíždějte s&nbsp;vlastní výbavou — půjčíme vám plně funkční airsoftové repliky. V&nbsp;nabídce pistole, samopaly i&nbsp;odstřelovačské pušky. Vše v&nbsp;perfektním technickém stavu.</p>
+        </div>
+      </div>
+      <div class="service-card animate-on-scroll" style="transition-delay:0.3s">
+        <img src="https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Kompletní výbava" class="service-card-img" loading="lazy">
+        <div class="service-card-body">
+          <span class="service-price">od 300 Kč / osoba</span>
+          <h3>Kompletní výbava na míru</h3>
+          <p>Helma, vesta, ochranné brýle a&nbsp;zásobníky — vše půjčíme v&nbsp;jednom balíčku. Přijdete bez ničeho, odejdete připraveni do boje.</p>
+        </div>
+      </div>
+      <div class="service-card animate-on-scroll" style="transition-delay:0.1s">
+        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Firemní teambuilding" class="service-card-img" loading="lazy">
+        <div class="service-card-body">
+          <span class="service-price">od 8 000 Kč / skupina</span>
+          <h3>Firemní teambuilding</h3>
+          <p>Stmelte kolektiv mimo kanceláře. Organizujeme celé dny se scénáři, rozhodčím a&nbsp;catering na vyžádání. Program přizpůsobíme vašim požadavkům.</p>
+        </div>
+      </div>
+      <div class="service-card animate-on-scroll" style="transition-delay:0.2s">
+        <img src="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Narozeninové akce" class="service-card-img" loading="lazy">
+        <div class="service-card-body">
+          <span class="service-price">od 4 500 Kč</span>
+          <h3>Narozeninové akce</h3>
+          <p>Nezapomenutelná oslava pro děti i&nbsp;dospělé. Postaráme se o&nbsp;program, bezpečnost i&nbsp;vybavení — vy jen přijďte a&nbsp;bavte se. Minimální věk 12 let.</p>
+        </div>
+      </div>
+      <div class="service-card animate-on-scroll" style="transition-delay:0.3s">
+        <img src="https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Taktické scénáře" class="service-card-img" loading="lazy">
+        <div class="service-card-body">
+          <span class="service-price">od 200 Kč / osoba</span>
+          <h3>Taktické scénáře a&nbsp;mise</h3>
+          <p>Hrajte podle připravených misí s&nbsp;příběhem — záchrana rukojmích, útok na základnu nebo přežití. Každý scénář vede zkušený rozhodčí a&nbsp;trvá 60–120 minut.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALERIE ═══ -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="gallery-header">
+      <div class="section-badge">Galerie</div>
+      <h2 class="section-title">Z hřiště v&nbsp;akci</h2>
+      <p class="section-subtitle">Podívejte se, jak to u&nbsp;nás vypadá — terény, výbava i&nbsp;týmové scénáře přímo na hřišti.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-card animate-on-scroll" style="transition-delay:0.1s">
+        <img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Taktický boj v terénu" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="cat">Hřiště</span>
+          <h3>Taktický boj v&nbsp;terénu</h3>
+        </div>
+      </div>
+      <div class="gallery-card animate-on-scroll" style="transition-delay:0.2s">
+        <img src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Výcvik a příprava" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="cat">Výcvik</span>
+          <h3>Příprava před misí</h3>
+        </div>
+      </div>
+      <div class="gallery-card animate-on-scroll" style="transition-delay:0.3s">
+        <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Týmový teambuilding" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="cat">Teambuilding</span>
+          <h3>Firemní skupina v&nbsp;akci</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RECENZE ═══ -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews-header">
+      <div class="section-badge">Recenze</div>
+      <h2 class="section-title">Co říkají hráči</h2>
+      <p class="section-subtitle">Přes 2 000 spokojených hráčů nemůže lhát. Přečtěte si jejich zkušenosti.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card animate-on-scroll" style="transition-delay:0.1s">
+        <div class="review-stars">
+          <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+        </div>
+        <p class="review-text">"Byli jsme tam s&nbsp;firmou a&nbsp;všichni si to pochvalovali. Organizace bez chyby, rozhodčí skvělí a&nbsp;půjčená výbava ve špičkovém stavu."</p>
+        <span class="review-author">Tomáš K.</span>
+      </div>
+      <div class="review-card animate-on-scroll" style="transition-delay:0.2s">
+        <div class="review-stars">
+          <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+        </div>
+        <p class="review-text">"Udělali jsme tam narozeniny pro kluka — absolutní hit. Přijeli jsme bez ničeho a&nbsp;vše nám zapůjčili. Určitě se vrátíme."</p>
+        <span class="review-author">Markéta S.</span>
+      </div>
+      <div class="review-card animate-on-scroll" style="transition-delay:0.3s">
+        <div class="review-stars">
+          <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+        </div>
+        <p class="review-text">"Hraju airsoft 6 let a&nbsp;tohle hřiště má skvělý terén. Scénáře jsou nápadité a&nbsp;hřiště se neustále mění a&nbsp;vylepšuje."</p>
+        <span class="review-author">Radek N.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <div class="section-badge">FAQ</div>
+      <h2 class="section-title">Časté dotazy</h2>
+      <p class="section-subtitle">Odpovědi na nejčastější otázky hráčů před první návštěvou.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item animate-on-scroll" style="transition-delay:0.1s">
+        <div class="faq-question">
+          <span>Musím mít vlastní zbraň nebo výbavu?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Ne, vůbec ne. Půjčíme vám airsoftovou zbraň, ochranné brýle, vestu i&nbsp;helmu. Stačí přijít v&nbsp;pohodlném oblečení, které vám nevadí ušpinit.</div>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll" style="transition-delay:0.15s">
+        <div class="faq-question">
+          <span>Od kolika let lze hrát?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Minimální věk pro hru je 12 let. Hráči do 18 let musí mít písemný souhlas zákonného zástupce, který si stáhnou předem z&nbsp;webu nebo podepíší na místě.</div>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll" style="transition-delay:0.2s">
+        <div class="faq-question">
+          <span>Jak probíhá rezervace?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Rezervaci provedete přes kontaktní formulář, e-mail nebo telefon. Doporučujeme rezervovat alespoň 3 dny předem, zejména na víkendy a&nbsp;firemní akce.</div>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll" style="transition-delay:0.25s">
+        <div class="faq-question">
+          <span>Je airsoft nebezpečný?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Při dodržení pravidel a&nbsp;s&nbsp;ochrannými pomůckami je airsoft bezpečný sport. Na hřišti vždy dohlíží rozhodčí, bez ochranných brýlí nelze hrát. BB kuličky mohou zanechat modřinu, na kontaktní čočky nedoporučujeme.</div>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll" style="transition-delay:0.3s">
+        <div class="faq-question">
+          <span>Mohu si zarezervovat celé hřiště pro skupinu?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Ano, nabízíme exkluzivní pronájem hřiště pro uzavřené skupiny od 10 osob. Hodí se na firemní teambuildingy, narozeniny nebo soukromé turnaje.</div>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll" style="transition-delay:0.35s">
+        <div class="faq-question">
+          <span>Kde přesně se hřiště nachází a&nbsp;je tam parkování?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Hřiště se nachází v&nbsp;Třeboni a&nbsp;jeho okolí. K&nbsp;dispozici je bezplatné parkoviště přímo u&nbsp;areálu. Přesnou adresu a&nbsp;navigaci najdete v&nbsp;sekci Kontakt.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KONTAKT ═══ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-header">
+      <div class="section-badge">Kontakt</div>
+      <h2 class="section-title">Rezervujte svůj termín</h2>
+      <p class="section-subtitle">Napište nám nebo zavolejte — rádi vám poradíme s&nbsp;výběrem programu a&nbsp;volným termínem.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="animate-on-scroll">
+        <p class="contact-info-title">Najdete nás v&nbsp;Třeboni</p>
+        <div class="contact-info-items">
+          <div class="contact-info-item">
+            <div class="icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div class="info-text">
+              <strong>Telefon</strong>
+              <span>+420 XXX XXX XXX</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="info-text">
+              <strong>E-mail</strong>
+              <span>info@gasfa.cz</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="info-text">
+              <strong>Adresa</strong>
+              <span>Třeboň, Jihočeský kraj</span>
+            </div>
+          </div>
+        </div>
+        <div class="hours-grid">
+          <h4>Otevírací doba</h4>
+          <div class="hours-row">
+            <span>Pondělí — Pátek</span>
+            <span class="time">14:00 — 20:00</span>
+          </div>
+          <div class="hours-row">
+            <span>Sobota — Neděle</span>
+            <span class="time">9:00 — 20:00</span>
+          </div>
+        </div>
+      </div>
+      <div class="animate-on-scroll" style="transition-delay:0.15s">
+        <div class="contact-form">
+          <h3>Odešlete poptávku</h3>
+          <form data-netlify="true" name="kontakt">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Jméno</label>
+                <input type="text" id="name" name="name" placeholder="Jan Novák" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" placeholder="+420 777 000 000">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="jan@email.cz" required>
+            </div>
+            <div class="form-group">
+              <label for="service">Typ akce</label>
+              <select id="service" name="service">
+                <option value="">Vyberte typ akce</option>
+                <option value="pronajem">Pronájem hřiště</option>
+                <option value="pujcovna">Půjčovna zbraní / výbavy</option>
+                <option value="teambuilding">Firemní teambuilding</option>
+                <option value="narozeniny">Narozeninová akce</option>
+                <option value="scenar">Taktický scénář / mise</option>
+                <option value="jine">Jiné</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Zpráva</label>
+              <textarea id="message" name="message" placeholder="Napište nám počet hráčů, preferovaný termín nebo jakékoli dotazy..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Odeslat rezervaci</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">gas<span>fa</span></div>
+        <p class="footer-desc">Airsoftové hřiště v&nbsp;Třeboni. Půjčíme zbraně i&nbsp;výbavu, organizujeme teambuildingy a&nbsp;narozeniny v&nbsp;terénu Jihočeského kraje.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigace</h4>
+        <ul>
+          <li><a href="#about">O nás</a></li>
+          <li><a href="#services">Služby</a></li>
+          <li><a href="#gallery">Galerie</a></li>
+          <li><a href="#reviews">Recenze</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Služby</h4>
+        <ul>
+          <li><a href="#services">Pronájem hřiště</a></li>
+          <li><a href="#services">Půjčovna zbraní</a></li>
+          <li><a href="#services">Teambuilding</a></li>
+          <li><a href="#services">Narozeninové akce</a></li>
+          <li><a href="#services">Taktické mise</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <p>Třeboň, Jihočeský kraj</p>
+        <p style="margin-top:0.5rem">info@gasfa.cz</p>
+        <p style="margin-top:0.5rem">+420 XXX XXX XXX</p>
+        <p style="margin-top:0.5rem;color:rgba(226,232,240,0.5);font-size:0.8rem">Po-Pá 14:00-20:00<br>So-Ne 9:00-20:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 gasfa. Všechna práva vyhrazena.</p>
+      <p>Vytvořeno přes <a href="https://webzitra.cz" target="_blank" rel="noopener">WebZítra.cz</a></p>
+    </div>
+  </div>
+    <div style="text-align:center;padding:12px;font-size:0.75rem;color:var(--text-muted,#999);border-top:1px solid var(--border,#eee);">
+        Vytvořeno na <a href="https://webzitra.cz?ref=free" style="color:var(--primary,#6366f1);text-decoration:none;">WebZítra.cz</a>
+    </div>
+</footer>
+
+<!-- ═══ BACK TO TOP ═══ -->
+<button id="back-to-top" aria-label="Zpět nahoru">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- ═══ COOKIE BANNER ═══ -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:var(--bg-dark);color:var(--text-light);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:9999;font-size:0.85rem;transform:translateY(100%);transition:transform 0.4s ease;border-top:1px solid var(--border)">
+  <p>Tento web používá cookies pro lepší zážitek. Web vytvořilo <a href="https://webzitra.cz" style="color:var(--accent-light)">WebZítra</a>.</p>
+  <div style="display:flex;gap:8px"><button id="cookie-accept" style="padding:8px 20px;border-radius:8px;border:none;background:var(--accent);color:white;cursor:pointer;font-weight:600;font-family:inherit">Přijmout</button></div>
+</div>
+
+<script>
+// ═══ NAVBAR SCROLL ═══
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// ═══ HAMBURGER ═══
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+});
+
+// ═══ FAQ ACCORDION ═══
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-question').addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// ═══ ANIMATE ON SCROLL ═══
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// ═══ COUNTER ANIMATION ═══
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const counter = entry.target;
+      const target = +counter.dataset.target;
+      let current = 0;
+      const increment = Math.ceil(target / 50);
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        if (target >= 1000) {
+          counter.textContent = current.toLocaleString('cs-CZ');
+        } else {
+          counter.textContent = current;
+        }
+      }, 30);
+      counterObserver.unobserve(counter);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.counter').forEach(c => counterObserver.observe(c));
+
+// ═══ BACK TO TOP ═══
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
+  }
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ═══ COOKIE BANNER ═══
+setTimeout(() => {
+  document.getElementById('cookie-banner').style.transform = 'translateY(0)';
+}, 2000);
+document.getElementById('cookie-accept').addEventListener('click', () => {
+  document.getElementById('cookie-banner').style.transform = 'translateY(100%)';
+});
+</script>
+<script>
+/* WZ Post-Process: Counter animation */
+document.querySelectorAll('[data-target]').forEach(function(el){
+  var target=parseInt(el.dataset.target)||0;if(!target)return;
+  var suffix=el.textContent.replace(/[0-9]/g,'').trim();
+  el.textContent='0';
+  var observer=new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting){
+      observer.disconnect();var n=0;var step=Math.ceil(target/40);
+      var timer=setInterval(function(){n+=step;if(n>=target){n=target;clearInterval(timer)}el.textContent=n+suffix},30);
+    }
+  });observer.observe(el);
+});
+/* WZ Post-Process: Scroll animations */
+document.querySelectorAll('.animate-on-scroll,[data-animate]').forEach(function(el){
+  el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity 0.6s ease,transform 0.6s ease';
+  new IntersectionObserver(function(entries,obs){
+    if(entries[0].isIntersecting){el.style.opacity='1';el.style.transform='none';obs.disconnect();}
+  },{threshold:0.1}).observe(el);
+});
+/* WZ Post-Process: Mobile menu toggle */
+var menuBtn=document.querySelector('.menu-toggle,.hamburger,[data-menu-toggle]');
+var menuNav=document.querySelector('.nav-links,.nav-menu,[data-nav-menu]');
+if(menuBtn&&menuNav){menuBtn.addEventListener('click',function(){menuNav.classList.toggle('active');menuBtn.classList.toggle('active')});}
+</script>
+</body>
+</html>
